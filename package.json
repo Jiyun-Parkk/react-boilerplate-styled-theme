@@ -1,7 +1,7 @@
 {
   "name": "my-react-template",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@mui/material": "^5.11.3",
     "@mui/styled-engine-sc": "^5.11.0",
