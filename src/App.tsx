@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Router from 'Router'
+import { GlobalStyle } from 'style/global.style'
+import { dark, light } from 'style/theme'
+import { ThemeProvider } from 'styled-components'
+import { useAppSelector } from 'hooks'
 
-function App() {
+export const App = () => {
+  const isDark = useAppSelector(({ theme }) => theme)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={isDark ? dark : light}>
+      <Router />
+      <GlobalStyle />
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
