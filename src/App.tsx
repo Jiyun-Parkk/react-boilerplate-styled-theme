@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { useAppSelector } from "hooks/useStore";
 
 export const App = () => {
-  const isDark = useAppSelector(({ theme }) => theme);
+  const isDark = useAppSelector(({ theme }) => theme.value);
 
   return (
     <ThemeProvider theme={isDark ? dark : light}>
